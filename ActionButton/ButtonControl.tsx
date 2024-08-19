@@ -1,73 +1,33 @@
 import * as React from 'react'
 import { Stack } from '@fluentui/react/lib/Stack';
-import { IBaseButtonProps, IBaseButtonState, IButtonStyles, PrimaryButton, IconButton } from '@fluentui/react/lib/Button';
-import { IIconProps } from '@fluentui/react';
+import { ActionButton, IBaseButtonProps, IButtonStyles, IconButton } from '@fluentui/react/lib/Button';
 import { TooltipHost } from '@fluentui/react/lib/Tooltip';
+import { DefaultButton, PrimaryButton } from 'office-ui-fabric-react';
 
 export interface IButtonControlProps extends IBaseButtonProps {
-  hoverBackgroundColor: string,
-  hoverColor: string,
-  checkedBackgroundColor: string,
-  checkedColor: string,
-  iconName: string | null,
-  toolTip: string | undefined,
+  styles: IButtonStyles,
+  iconName?: string,
+  toolTip?: string,
+  onButtonClicked: () => void
 }
 
-export default class ButtonControl extends React.Component<IButtonControlProps, IBaseButtonState>{
-  constructor(props: IButtonControlProps) {
-    super(props);
-  }
-  styles: IButtonStyles = {
-    root: {
-      backgroundColor: this.props.style?.backgroundColor ?? "#0078d4",
-      borderColor: this.props.style?.borderColor ?? "#0078d4",
-      color: this.props.style?.color ?? "#FFFFFF",
-      width: this.props.style?.width,
-      height: this.props.style?.height,
-      borderRadius: this.props.style?.borderRadius,
-    },
-    rootHovered: {
-      backgroundColor: this.props.hoverBackgroundColor ?? "#106EBE",
-      color: this.props.hoverColor ?? "#FFFFFF",
-      width: this.props.style?.width
-    },
-    rootPressed: {
-      backgroundColor: this.props.checkedBackgroundColor ?? "#0078d4",
-      color: this.props.checkedColor ?? "#FFFFFF",
-      width: this.props.style?.width
-    }
-  }
+const ButtonControl = (props: IButtonControlProps) => {
+  const toolTipId = `tooltip_${props.iconName}`;
 
-  icon: IIconProps = { iconName: this.props.iconName ?? "" };
-
-  render() {
-    const toolTipId = `tooltip_${this.props.iconName}`;
-
-    return (
-      <Stack horizontal>
-        {this.props.text?.trim().length ? (
-          <TooltipHost content={this.props.toolTip} id={toolTipId}>
-            <PrimaryButton
-              iconProps={this.icon}
-              styles={this.styles}
-              text={this.props.text}
-              disabled={this.props.disabled}
-              onClick={this.props.onClick}
-              aria-describedby={toolTipId}
-            />
-          </TooltipHost>
-        ) : (
-          <TooltipHost content={this.props.toolTip} id={toolTipId}>
-            <IconButton
-              iconProps={this.icon}
-              styles={this.styles}
-              disabled={this.props.disabled}
-              onClick={this.props.onClick}
-              aria-describedby={toolTipId}
-            />
-          </TooltipHost>
-        )}
-      </Stack>
-    );
-  }
+  return ( 
+    <Stack horizontal>
+        <TooltipHost content={props.toolTip} id={toolTipId}>
+          <PrimaryButton
+            iconProps={{ iconName: props.iconName, style: { color: 'white'} }}
+            styles={props.styles}
+            text={props.text}
+            onClick={props.onButtonClicked}
+            disabled={props.disabled}
+            allowDisabledFocus
+            aria-describedby={toolTipId}/>
+        </TooltipHost>
+    </Stack> 
+  );
 }
+
+export default ButtonControl;

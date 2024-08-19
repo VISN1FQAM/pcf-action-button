@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
   <control namespace="novalogica" constructor="ActionButtonControl" version="0.0.1" display-name-key="ActionButtonControl" description-key="Action Button Control description" control-type="standard" >
-    <property 
-      name="BoundAttribute" 
-      display-name-key="BoundAttribute_Display_Key" 
-      description-key="BoundAttribute_Desc_Key" 
-      of-type-group="ValidTypes" 
-      usage="bound" 
-      required="true" 
-    />
-    
+    <property name="LinkedAttribute" display-name-key="LinkedAttribute_Display_Key" description-key="LinkedAttribute_Desc_Key" of-type-group="ValidTypes" usage="bound" required="true" />
     <property name="ActionButtonLabel" display-name-key="ActionButtonLabel_Display_Key" description-key="ActionText_Desc_Key" of-type="SingleLine.Text" default-value="" usage="input" required="false" />
+    <property name="ToolTipDescription" display-name-key="ToolTipDescription_Display_Key" description-key="ToolTipDescription_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
+
     <property name="EnableButtonOnDisabledForm" display-name-key="EnableButtonOnDisabledForm_Display_Key" description-key="EnableButtonOnDisabledForm_Desc_Key" of-type="Enum" default-value="1" usage="input" required="true">
       <value name="Yes" display-name-key="yes_Display_Key" description-key="yes_Desc_Key">1</value>
       <value name="No" display-name-key="no_Display_Key" description-key="no_Desc_Key">0</value>
     </property>
 
     <property name="IconName" display-name-key="IconName_Display_Key" description-key="IconName_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
-    <property name="ToolTipDescription" display-name-key="ToolTipDescription_Display_Key" description-key="ToolTipDescription_Desc_Key" of-type="SingleLine.Text" usage="input" required="false" />
-
+    
     <!-- Styling Properties -->
     <property name="Width" display-name-key="Width_Display_Key" description-key="Width_Desc_Key" of-type="Whole.None" default-value="100" usage="input" required="false" />
     <property name="Height" display-name-key="Width_Display_Key" description-key="Width_Desc_Key" of-type="Whole.None" default-value="50" usage="input" required="false" />
+    <property name="BackgroundColor" display-name-key="BackgroundColor_Display_Key" description-key="BackgroundColor_Desc_Key" of-type="SingleLine.Text" default-value="#38807b" usage="input" required="false" />
     <property name="BorderRadius" display-name-key="BorderRadius_Display_Key" description-key="BorderRadius_Desc_Key" of-type="Whole.None" default-value="4" usage="input" required="false" />
-    <property name="BackgroundColor" display-name-key="BackgroundColor_Display_Key" description-key="BackgroundColor_Desc_Key" of-type="SingleLine.Text" default-value="#0078d4" usage="input" required="false" />
-    <property name="HoverBackgroundColor" display-name-key="HoverBackgroundColor_Display_Key" description-key="HoverBackgroundColor_Desc_Key" of-type="SingleLine.Text" default-value="#106EBE" usage="input" required="false" />
-    <property name="Color" display-name-key="Color_Display_Key" description-key="Color_Desc_Key" of-type="SingleLine.Text" default-value="#FFFFFF" usage="input" required="false" />
-    <property name="HoverColor" display-name-key="HoverColor_Display_Key" description-key="HoverColor_Desc_Key" of-type="SingleLine.Text" default-value="#FFFFFF" usage="input" required="false" />
-    <property name="ActiveBackgroundColor" display-name-key="ActiveBackgroundColor_Display_Key" description-key="ActiveBackgroundColor_Desc_Key" of-type="SingleLine.Text" default-value="#0078d4" usage="input" required="false" />
-    <property name="ActiveColor" display-name-key="ActiveColor_Display_Key" description-key="ActiveColor_Desc_Key" of-type="SingleLine.Text" default-value="#FFFFFF" usage="input" required="false" />
     
     <property name="ButtonType" display-name-key="ButtonType_Display_Key" description-key="ButtonType_Desc_Key" of-type="Enum" default-value="1" usage="input" required="true">
       <value name="Colored" display-name-key="Colored_Display_Key" description-key="Colored_Desc_Key">1</value>
