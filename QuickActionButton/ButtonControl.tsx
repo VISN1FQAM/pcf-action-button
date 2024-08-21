@@ -46,7 +46,12 @@ const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }:
                 }
             }
 
-            const props = { button: button, styling: styling, isFormDisabled: isFormDisabled, onClicked: () => onButtonClicked(button.key) } as IActionButtonProps
+            const props = { 
+              button: button, 
+              styling: styling, 
+              isFormDisabled: isFormDisabled, 
+              onClicked: () => onButtonClicked(button.key) 
+            } as IActionButtonProps
 
             switch(buttonType) {
               case "Vertical With Icon":
