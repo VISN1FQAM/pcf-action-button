@@ -76,3 +76,4 @@ In order to deploy to your environment you'll need to run this commands:
       pac auth select --index <index of the active profile>
    #### 4. Ensure that you have a valid connection and push the component
       pac pcf push -pp <your publisher prefix>
+   
