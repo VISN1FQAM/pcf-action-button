@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { CompoundButton } from 'office-ui-fabric-react/lib/components/Button/CompoundButton/CompoundButton';
-import { IActionButtonProps } from '../IActionButtonProps';
+import { IActionButtonProps } from '../interfaces/IActionButtonProps';
 
 const LabelButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {
     styling.flexContainer = {

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IActionButtonProps } from '../IActionButtonProps';
+import { IActionButtonProps } from '../interfaces/IActionButtonProps';
 import { CompoundButton } from 'office-ui-fabric-react/lib/components/Button/CompoundButton/CompoundButton';
 
 const IconOnlyButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {

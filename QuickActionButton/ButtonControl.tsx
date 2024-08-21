@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { Stack } from '@fluentui/react/lib/Stack';
 
-import { IBaseButton } from './IBaseButton';
-import { IActionButtonProps } from './IActionButtonProps';
+import { IBaseButton } from './interfaces/IBaseButton';
+import { IActionButtonProps } from './interfaces/IActionButtonProps';
 import {VerticalButton, HorizontalButton, IconOnlyButton, LabelButton} from './components'
 import { IStackTokens } from 'office-ui-fabric-react/lib/components/Stack';
 import { IButtonStyles } from '@fluentui/react';

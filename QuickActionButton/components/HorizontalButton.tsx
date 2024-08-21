@@ -1,25 +1,26 @@
 import * as React from 'react';
-import { IActionButtonProps } from '../IActionButtonProps';
 import { CompoundButton } from 'office-ui-fabric-react/lib/components/Button/CompoundButton/CompoundButton';
+import { IActionButtonProps } from '../interfaces/IActionButtonProps';
 
-const VerticalButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {
+const HorizontalButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {
     styling.flexContainer = {
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: 8,
         width: 140,
-        height: 60
+        height: 40,
+        gap: 8
     }
 
     styling.textContainer = {
-        textAlign: 'center'
+        textAlign: 'left'
     }
 
     styling.icon = {
         margin: 0
     }
-
+   
+    
     return ( 
         <CompoundButton 
             styles={styling} 
@@ -34,4 +35,4 @@ const VerticalButton = ({ button, styling, onClicked, isFormDisabled } : IAction
     );
 }
  
-export default VerticalButton;
+export default HorizontalButton;

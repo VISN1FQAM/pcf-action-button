@@ -3,9 +3,9 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { initializeIcons } from '@fluentui/font-icons-mdl2';
 import ButtonControl, { IButtonControlProps } from "./ButtonControl";
-import { IBaseButton } from "./IBaseButton";
+import { IBaseButton } from "./interfaces/IBaseButton";
 
-export class QuickActionButtonControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class QuickActionButton implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 	private container: HTMLDivElement;
 	private buttonClicked: string;
 	private notifyOutputChanged: () => void;
@@ -41,9 +41,7 @@ export class QuickActionButtonControl implements ComponentFramework.StandardCont
 	}
 
 	public getOutputs(): IOutputs {
-		return { 
-			LinkedAttribute: this.buttonClicked
-		};
+		return {  LinkedAttribute: this.buttonClicked };
 	}
 
 	public destroy(): void {
