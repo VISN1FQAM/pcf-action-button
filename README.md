@@ -9,8 +9,6 @@ This is an example of the expected "Buttons JSON" property. In here you must spe
 
 Also if needed, you can set a specific button to be disabled (isDisabled). If not specified, the buttons will be disabled only when the control is set to "Read-Only".
 
-When the button is clicked the key is saved within the linked attribute and to handle the button click, just add an onChange event on this field and handle it based on the returned key value.
-
 
 ```json
 [
@@ -41,6 +39,7 @@ When the button is clicked the key is saved within the linked attribute and to h
 ```
 
 
+When the button is clicked the key is saved within the linked attribute and to handle the button click, just add an onChange event on this field and handle it based on the returned key value.
 
 
 ### Icons
