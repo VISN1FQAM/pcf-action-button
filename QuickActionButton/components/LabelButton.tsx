@@ -7,7 +7,8 @@ const LabelButton = ({ button, styling, onClicked, isFormDisabled } : IActionBut
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 140,
+        minWidth: 100,
+        width: 'auto',
         height: 30
     }
 

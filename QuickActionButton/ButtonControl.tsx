@@ -15,10 +15,9 @@ export interface IButtonControlProps {
 }
 
 const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }: IButtonControlProps) => {
-  const tokens: IStackTokens = { childrenGap: 4 };
 
   return ( 
-    <Stack horizontal horizontalAlign='center' tokens={tokens}>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', overflow: 'auto' }}>
         {
           buttons.map(button => {
             const styling: IButtonStyles = {
@@ -65,7 +64,7 @@ const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }:
             }
           })
         }
-    </Stack> 
+    </div> 
   );
 }
 

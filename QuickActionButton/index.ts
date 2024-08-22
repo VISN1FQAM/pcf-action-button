@@ -41,7 +41,7 @@ export class QuickActionButton implements ComponentFramework.StandardControl<IIn
 	}
 
 	public getOutputs(): IOutputs {
-		return {  LinkedAttribute: this.buttonClicked };
+		return { LinkedAttribute: this.buttonClicked };
 	}
 
 	public destroy(): void {

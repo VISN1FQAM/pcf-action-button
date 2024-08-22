@@ -7,7 +7,8 @@ const IconOnlyButton = ({ button, styling, onClicked, isFormDisabled } : IAction
         flexDirection: 'row',
         alignItems: "center",
         justifyContent: "center",
-        width: 50,
+        minWidth: 50,
+        width: 'auto',
         height: 50
     }
 

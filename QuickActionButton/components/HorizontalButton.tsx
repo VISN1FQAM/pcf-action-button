@@ -7,7 +7,8 @@ const HorizontalButton = ({ button, styling, onClicked, isFormDisabled } : IActi
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 140,
+        minWidth: 100,
+        width: 'auto',
         height: 40,
         gap: 8
     }
