@@ -17,7 +17,7 @@ export interface IButtonControlProps {
 const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }: IButtonControlProps) => {
 
   return ( 
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', overflow: 'auto' }}>
+    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', overflow: 'auto' }}>
         {
           buttons.map(button => {
             const styling: IButtonStyles = {
