@@ -8,8 +8,7 @@ const VerticalButton = ({ button, styling, onClicked, isFormDisabled } : IAction
         alignItems: 'center',
         justifyContent: 'center',
         gap: 8,
-        minWidth: 100,
-        width: "auto",
+        width: 140,
         height: 60
     }
 

@@ -17,10 +17,8 @@ export interface IButtonControlProps {
 const containerStyle: React.CSSProperties = {
   height: '100%',
   width: '100%',
-  display: 'flex', 
-  flexDirection: 'row', 
-  flexWrap: 'wrap',
-  justifyContent: 'center' 
+  display: 'grid',
+  gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))"
 }
 
 const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }: IButtonControlProps) => {
