@@ -14,10 +14,19 @@ export interface IButtonControlProps {
   onButtonClicked: (key: string) => void
 }
 
+const containerStyle: React.CSSProperties = {
+  height: '100%',
+  width: '100%',
+  display: 'flex', 
+  flexDirection: 'row', 
+  flexWrap: 'wrap',
+  justifyContent: 'center' 
+}
+
 const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }: IButtonControlProps) => {
 
   return ( 
-    <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', overflow: 'auto' }}>
+    <div style={containerStyle}>
         {
           buttons.map(button => {
             const styling: IButtonStyles = {
