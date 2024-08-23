@@ -27,7 +27,7 @@ export class QuickActionButton implements ComponentFramework.StandardControl<IIn
 	private renderControl(context: IControlContext): void {
 		const params = context.parameters;
 
-		let props: IButtonControlProps = {
+		const props: IButtonControlProps = {
 			buttons: JSON.parse(params.Buttons.raw ?? ""),
 			buttonType: params.ButtonType.raw ?? "",
 			isFormDisabled: context.mode.isControlDisabled,
