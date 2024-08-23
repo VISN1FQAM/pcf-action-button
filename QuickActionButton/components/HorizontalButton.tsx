@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CompoundButton } from 'office-ui-fabric-react/lib/components/Button/CompoundButton/CompoundButton';
+import { CompoundButton } from '@fluentui/react/lib/Button';
 import { IActionButtonProps } from '../interfaces/IActionButtonProps';
 
 const HorizontalButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {
@@ -19,7 +19,6 @@ const HorizontalButton = ({ button, styling, onClicked, isFormDisabled } : IActi
     styling.icon = {
         margin: 0
     }
-   
     
     return ( 
         <CompoundButton 

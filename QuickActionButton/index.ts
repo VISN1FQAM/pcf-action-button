@@ -3,7 +3,8 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { initializeIcons } from '@fluentui/font-icons-mdl2';
 import ButtonControl, { IButtonControlProps } from "./ButtonControl";
-import { IBaseButton } from "./interfaces/IBaseButton";
+
+type IControlContext = ComponentFramework.Context<IInputs>;
 
 export class QuickActionButton implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 	private container: HTMLDivElement;
@@ -14,34 +15,37 @@ export class QuickActionButton implements ComponentFramework.StandardControl<IIn
 		initializeIcons();
 	}
 
-	public init(context: ComponentFramework.Context<IInputs>, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement) {
+	public init(context: IControlContext, notifyOutputChanged: () => void, state: ComponentFramework.Dictionary, container: HTMLDivElement): void {
 		this.container = container;
 		this.notifyOutputChanged = notifyOutputChanged;
+	}
+
+	public updateView(context: IControlContext): void {
 		this.renderControl(context);
 	}
 
-	private renderControl(context: ComponentFramework.Context<IInputs>): void {
+	private renderControl(context: IControlContext): void {
 		const params = context.parameters;
 
 		let props: IButtonControlProps = {
-			buttons: JSON.parse(params.Buttons.raw ?? "") as IBaseButton[],
+			buttons: JSON.parse(params.Buttons.raw ?? ""),
 			buttonType: params.ButtonType.raw ?? "",
 			isFormDisabled: context.mode.isControlDisabled,
-			onButtonClicked: (key) => {
-				this.buttonClicked = key;
-				this.notifyOutputChanged()
-			}
+			onButtonClicked: this.onActionClicked
 		}
 
 		ReactDOM.render(React.createElement(ButtonControl, props), this.container);
 	}
 
-	public updateView(context: ComponentFramework.Context<IInputs>): void {
-		this.renderControl(context);
+	private onActionClicked = (key: string) => {
+		this.buttonClicked = key;
+		this.notifyOutputChanged()
 	}
 
 	public getOutputs(): IOutputs {
-		return { LinkedAttribute: this.buttonClicked };
+		return { 
+			LinkedAttribute: this.buttonClicked 
+		};
 	}
 
 	public destroy(): void {

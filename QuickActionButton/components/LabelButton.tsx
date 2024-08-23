@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CompoundButton } from 'office-ui-fabric-react/lib/components/Button/CompoundButton/CompoundButton';
+import { CompoundButton } from '@fluentui/react/lib/Button';
 import { IActionButtonProps } from '../interfaces/IActionButtonProps';
 
 const LabelButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {

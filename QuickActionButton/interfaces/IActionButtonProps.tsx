@@ -1,8 +1,8 @@
 import { IButtonStyles } from "@fluentui/react";
-import { IBaseButton } from "./IBaseButton";
+import { ActionButton } from "./ActionButton";
 
 export interface IActionButtonProps {
-    button: IBaseButton,
+    button: ActionButton,
     styling: IButtonStyles
     onClicked: () => void,
     isFormDisabled: boolean

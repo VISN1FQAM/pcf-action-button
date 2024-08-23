@@ -1,67 +1,27 @@
 import * as React from 'react'
-import { Stack } from '@fluentui/react/lib/Stack';
-
-import { IBaseButton } from './interfaces/IBaseButton';
-import { IActionButtonProps } from './interfaces/IActionButtonProps';
-import {VerticalButton, HorizontalButton, IconOnlyButton, LabelButton} from './components'
-import { IStackTokens } from 'office-ui-fabric-react/lib/components/Stack';
-import { IButtonStyles } from '@fluentui/react';
+import { VerticalButton, HorizontalButton, IconOnlyButton, LabelButton } from './components'
+import { ActionButton, IActionButtonProps } from './interfaces';
+import { createButtonStyle } from './styles';
 
 export interface IButtonControlProps {
-  buttons: IBaseButton[],
+  buttons: ActionButton[],
   buttonType: string,
   isFormDisabled: boolean,
   onButtonClicked: (key: string) => void
 }
 
-const containerStyle: React.CSSProperties = {
-  height: '100%',
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-  alignItems: 'start',
-  flexGrow: 1
-}
-
 const ButtonControl = ({ buttons, buttonType, isFormDisabled, onButtonClicked }: IButtonControlProps) => {
-
   return ( 
-    <div style={containerStyle}>
+    <div style={{ height: "100%", width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'start' }}>
         {
           buttons.map(button => {
-            const styling: IButtonStyles = {
-                root:{
-                    background: button.bgColor,
-                    color: button.color,
-                    margin: 10,
-                    border: 0,
-                    borderRadius: 4
-                },
-                rootPressed:{
-                    background: button.bgColor,
-                    color: button.color
-                },
-                rootHovered:{
-                    background: button.bgColor,
-                    color: button.color,
-                    opacity: 0.9
-                },
-                description:{
-                    color: button.color
-                },
-                descriptionHovered:{
-                    color: button.color
-                }
-            }
-
-            const props = { 
+            
+            const props: IActionButtonProps = { 
               button: button, 
-              styling: styling, 
+              styling: createButtonStyle(button), 
               isFormDisabled: isFormDisabled, 
               onClicked: () => onButtonClicked(button.key) 
-            } as IActionButtonProps
+            }
 
             switch(buttonType) {
               case "Vertical With Icon":

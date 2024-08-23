@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { CompoundButton } from '@fluentui/react/lib/Button';
 import { IActionButtonProps } from '../interfaces/IActionButtonProps';
-import { CompoundButton } from 'office-ui-fabric-react/lib/components/Button/CompoundButton/CompoundButton';
 
 const VerticalButton = ({ button, styling, onClicked, isFormDisabled } : IActionButtonProps) => {
     styling.flexContainer = {

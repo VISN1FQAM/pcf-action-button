@@ -1,4 +1,4 @@
-export interface IBaseButton {
+export interface ActionButton {
     key: string,
     label: string,
     iconName: string,
